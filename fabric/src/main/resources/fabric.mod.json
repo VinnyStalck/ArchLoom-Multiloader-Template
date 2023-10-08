@@ -19,10 +19,6 @@
       "com.example.examplemod.fabric.ExampleModFabric"
     ]
   },
-  "mixins": [
-    "examplemod.mixins.json",
-    "examplemod-common.mixins.json"
-  ],
   "depends": {
     "fabric": "*",
     "minecraft": ">=1.20.2"
