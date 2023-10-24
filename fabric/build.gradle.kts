@@ -36,6 +36,9 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("net.fabricmc.fabric-api:fabric-api:${project.properties["fabric_api_version"]}+$minecraftVersion")
 
+    modCompileOnly("com.terraformersmc:modmenu:${project.properties["modmenu_version"]}")
+	modRuntimeOnly("com.terraformersmc:modmenu:${project.properties["modmenu_version"]}")
+
     "common"(project(":common", "namedElements")) { isTransitive = false }
     "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }
 }
@@ -75,6 +78,11 @@ components {
         if (this is AdhocComponentWithVariants)
             withVariantsFromConfiguration(project.configurations.shadowRuntimeElements.get()) { skip() }
     }
+}
+
+repositories {
+    // ModMenu
+    maven("https://maven.terraformersmc.com/")
 }
 
 publishing {
