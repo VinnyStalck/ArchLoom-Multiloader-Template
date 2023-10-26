@@ -15,6 +15,13 @@ gradleEnterprise.buildScan {
 }
 
 include(
+    "modules:1.20.2-multiloader",
+    "modules:1.20.2-multiloader:common",
+    "modules:1.20.2-multiloader:fabric",
+    "modules:1.20.2-multiloader:forge"
+)
+
+include(
     "modules:1.20.2-multiloader-mixins",
     "modules:1.20.2-multiloader-mixins:common",
     "modules:1.20.2-multiloader-mixins:fabric",
