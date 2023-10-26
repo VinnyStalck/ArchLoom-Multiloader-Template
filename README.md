@@ -12,4 +12,5 @@ Inpired by [MultiProject Template by sa-shiro](https://github.com/sa-shiro/Minec
 1. Copy one of the templates inside the `modules` folder and/or rename it; 
 2. Inside `modules/your-module/gradle.properties` update the `project_path` property to the new path;
 3. Inside `settings.gradle.kts` include the new path to the module;
-4. Start modding.
+4. Change the properties inside `modules/your-module/gradle.properties` to fit your mod;
+5. Start modding.
