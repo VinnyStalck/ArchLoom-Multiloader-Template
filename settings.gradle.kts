@@ -14,6 +14,11 @@ gradleEnterprise.buildScan {
     termsOfServiceAgree = "yes"
 }
 
-include("common", "fabric", "forge")
+include(
+    "modules:1.20.2-multiloader-mixins",
+    "modules:1.20.2-multiloader-mixins:common",
+    "modules:1.20.2-multiloader-mixins:fabric",
+    "modules:1.20.2-multiloader-mixins:forge"
+)
 
 rootProject.name = "ExampleMod"

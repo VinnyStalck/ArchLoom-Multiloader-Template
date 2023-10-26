@@ -18,7 +18,7 @@ configurations {
 }
 
 loom {
-    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+    accessWidenerPath.set(project(":${project.properties["project_path"]}:common").loom.accessWidenerPath)
 
     forge {
         convertAccessWideners.set(true)
@@ -32,16 +32,16 @@ loom {
     runs.create("datagen") {
         data()
         programArgs("--all", "--mod", "examplemod")
-        programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
-        programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
+        programArgs("--output", project(":${project.properties["project_path"]}:common").file("src/main/generated/resources").absolutePath)
+        programArgs("--existing", project(":${project.properties["project_path"]}:common").file("src/main/resources").absolutePath)
     }
 }
 
 dependencies {
     forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
 
-    "common"(project(":common", "namedElements")) { isTransitive = false }
-    "shadowCommon"(project(":common", "transformProductionForge")) { isTransitive = false }
+    "common"(project(":${project.properties["project_path"]}:common", "namedElements")) { isTransitive = false }
+    "shadowCommon"(project(":${project.properties["project_path"]}:common", "transformProductionForge")) { isTransitive = false }
 }
 
 tasks {
@@ -68,7 +68,7 @@ tasks {
     jar.get().archiveClassifier.set("dev")
 
     sourcesJar {
-        val commonSources = project(":common").tasks.sourcesJar
+        val commonSources = project(":${project.properties["project_path"]}:common").tasks.sourcesJar
         dependsOn(commonSources)
         from(commonSources.get().archiveFile.map { zipTree(it) })
     }

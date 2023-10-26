@@ -18,14 +18,14 @@ configurations {
 }
 
 loom {
-    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+    accessWidenerPath.set(project(":${project.properties["project_path"]}:common").loom.accessWidenerPath)
 
     // Fabric Datagen Gradle config.  Remove if not using Fabric datagen
     runs.create("datagen") {
         server()
         name("Data Generation")
         vmArg("-Dfabric-api.datagen")
-        vmArg("-Dfabric-api.datagen.output-dir=${project(":common").file("src/main/generated/resources").absolutePath}")
+        vmArg("-Dfabric-api.datagen.output-dir=${project(":${project.properties["project_path"]}:common").file("src/main/generated/resources").absolutePath}")
         vmArg("-Dfabric-api.datagen.modid=examplemod")
 
         runDir("build/datagen")
@@ -39,8 +39,8 @@ dependencies {
     modCompileOnly("com.terraformersmc:modmenu:${project.properties["modmenu_version"]}")
 	modRuntimeOnly("com.terraformersmc:modmenu:${project.properties["modmenu_version"]}")
 
-    "common"(project(":common", "namedElements")) { isTransitive = false }
-    "shadowCommon"(project(":common", "transformProductionFabric")) { isTransitive = false }
+    "common"(project(":${project.properties["project_path"]}:common", "namedElements")) { isTransitive = false }
+    "shadowCommon"(project(":${project.properties["project_path"]}:common", "transformProductionFabric")) { isTransitive = false }
 }
 
 tasks {
@@ -67,7 +67,7 @@ tasks {
     jar.get().archiveClassifier.set("dev")
 
     sourcesJar {
-        val commonSources = project(":common").tasks.sourcesJar
+        val commonSources = project(":${project.properties["project_path"]}:common").tasks.sourcesJar
         dependsOn(commonSources)
         from(commonSources.get().archiveFile.map { zipTree(it) })
     }
