@@ -1,27 +1,27 @@
 modLoader = "javafml"
-loaderVersion = "[48,)"
-issueTrackerURL = ""
-license = "Insert License Here"
+loaderVersion = "${forge_loader_version_range}"
+issueTrackerURL = "${issues_page}"
+license = "${mod_licence}"
 
 [[mods]]
-modId = "examplemod"
-version = "${version}"
-displayName = "ExampleMod"
-authors = "Example Author"
-description = '''
-'''
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+displayURL = "${home_page}"
+authors = "${mod_author}"
+description = '''${mod_description}'''
 #logoFile = ""
 
-[[dependencies.examplemod]]
+[[dependencies.${mod_id}]]
 modId = "forge"
 mandatory = true
-versionRange = "[48,)"
+versionRange = "${forge_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.${mod_id}]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.20.2]"
+versionRange = "${forge_minecraft_version_range}"
 ordering = "NONE"
 side = "BOTH"

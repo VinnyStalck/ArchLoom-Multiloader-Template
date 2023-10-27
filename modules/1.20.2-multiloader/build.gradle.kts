@@ -33,6 +33,14 @@ subprojects {
         compileOnly("org.jetbrains:annotations:24.0.1")
     }
     loom.silentMojangMappingsLicense()
+
+    tasks {
+        processResources {
+            filesMatching(listOf("fabric.mod.json", "META-INF/mods.toml", "pack.mcmeta")) {
+                expand(project.properties)
+            }
+        }
+    }
 }
 
 allprojects {

@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "Example Mod",
-    "pack_format": 15
+    "description": "${mod_name}",
+    "pack_format": ${minecraft_pack_version}
   }
 }

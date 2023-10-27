@@ -50,6 +50,14 @@ allprojects {
         options.release.set(17)
     }
 
+    tasks {
+        processResources {
+            filesMatching(listOf("fabric.mod.json", "META-INF/mods.toml", "pack.mcmeta", "*.mixins.json", "*.common.json")) {
+                expand(project.properties)
+            }
+        }
+    }
+
     java.withSourcesJar()
 }
 

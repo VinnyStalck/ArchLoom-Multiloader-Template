@@ -1,17 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
-  "version": "${version}",
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
   "authors": [
-    "Your Name Here"
+    "${mod_author}"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": ""
+    "homepage": "${home_page}",
+    "sources": "${source_page}",
+    "issues": "${issues_page}"
   },
-  "license": "Insert License Here",
+  "license": "${mod_licence}",
   "icon": "assets/examplemod/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -24,7 +25,7 @@
     "examplemod-common.mixins.json"
   ],
   "depends": {
-    "fabric": "*",
-    "minecraft": ">=1.20.2"
+    "fabric": "${fabric_loader_version_range}",
+    "minecraft": "${fabric_minecraft_version_range}"
   }
 }
