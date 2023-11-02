@@ -5,7 +5,7 @@ architectury {
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
-loom.accessWidenerPath.set(file("src/main/resources/examplemod.accesswidener"))
+loom.accessWidenerPath.set(file("src/main/resources/${project.properties["mod_id"]}.accesswidener"))
 
 sourceSets.main.get().resources.srcDir("src/main/generated/resources")
 

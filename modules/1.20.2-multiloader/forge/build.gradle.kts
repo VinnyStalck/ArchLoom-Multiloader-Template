@@ -28,7 +28,7 @@ loom {
     // Forge Datagen Gradle config. Remove if not using Forge datagen
     runs.create("datagen") {
         data()
-        programArgs("--all", "--mod", "examplemod")
+        programArgs("--all", "--mod", "${project.properties["mod_id"]}")
         programArgs("--output", project(":${project.properties["project_path"]}:common").file("src/main/generated/resources").absolutePath)
         programArgs("--existing", project(":${project.properties["project_path"]}:common").file("src/main/resources").absolutePath)
     }

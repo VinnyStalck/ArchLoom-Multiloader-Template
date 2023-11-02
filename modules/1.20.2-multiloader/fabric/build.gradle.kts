@@ -26,7 +26,7 @@ loom {
         name("Data Generation")
         vmArg("-Dfabric-api.datagen")
         vmArg("-Dfabric-api.datagen.output-dir=${project(":${project.properties["project_path"]}:common").file("src/main/generated/resources").absolutePath}")
-        vmArg("-Dfabric-api.datagen.modid=examplemod")
+        vmArg("-Dfabric-api.datagen.modid=${project.properties["mod_id"]}")
 
         runDir("build/datagen")
     }
