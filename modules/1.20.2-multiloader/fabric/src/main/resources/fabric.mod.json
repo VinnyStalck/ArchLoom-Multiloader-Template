@@ -17,7 +17,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.example.examplemod.fabric.ExampleModFabric"
+      "${mod_group}.${mod_id}.fabric.${mod_class}Fabric"
     ]
   },
   "depends": {
