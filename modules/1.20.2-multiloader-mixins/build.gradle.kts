@@ -3,8 +3,6 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "1.4-SNAPSHOT" apply false
-    idea
-    java
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
@@ -36,10 +34,8 @@ subprojects {
 }
 
 allprojects {
-    apply(plugin = "java")
     apply(plugin = "architectury-plugin")
     apply(plugin = "maven-publish")
-    apply(plugin = "idea")
 
     version = project.properties["mod_version"] as String
     group = project.properties["maven_group"] as String
@@ -57,7 +53,5 @@ allprojects {
             }
         }
     }
-
-    java.withSourcesJar()
 }
 
